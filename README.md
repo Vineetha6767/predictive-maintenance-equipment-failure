@@ -83,12 +83,18 @@ Two additional features were created:
 ```text
 Temperature Difference =
 Process Temperature - Air Temperature
+```
 
-Mechanical Power
+### Mechanical Power
+
+```text
 Mechanical Power =
 Torque × Rotational Speed
+```
 
 These features provide additional information about the machine's operating conditions.
+
+---
 
 ## 🤖 Machine Learning Models
 
