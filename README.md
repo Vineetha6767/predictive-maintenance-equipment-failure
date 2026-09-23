@@ -224,6 +224,8 @@ predictive-maintenance/
 ├── .gitignore
 ├── requirements.txt
 └── README.md
+```
+
 
 ---
 
