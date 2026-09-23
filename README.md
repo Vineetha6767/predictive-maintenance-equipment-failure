@@ -90,59 +90,66 @@ Torque × Rotational Speed
 
 These features provide additional information about the machine's operating conditions.
 
-🤖 Machine Learning Models
+## 🤖 Machine Learning Models
 
 The following models were developed and compared:
 
-1. Logistic Regression
+### 1. Logistic Regression
 
 Used as a baseline classification model.
 
-2. Random Forest
+### 2. Random Forest
 
 Used as a tree-based ensemble model for comparison.
 
-3. XGBoost
+### 3. XGBoost
 
 Used as the final candidate model because of its strong performance on the predictive maintenance dataset.
 
-Class imbalance was addressed using scale_pos_weight in XGBoost.
+Class imbalance was addressed using `scale_pos_weight` in XGBoost.
 
-⚖️ Handling Class Imbalance
+---
+
+## ⚖️ Handling Class Imbalance
 
 Machine failure is a relatively rare event in the dataset.
 
 To address this imbalance, the training data was analyzed and XGBoost was configured using:
 
-scale_pos_weight
+`scale_pos_weight`
 
 This gives greater importance to the minority failure class and improves the model's ability to detect failures.
 
-📈 Model Evaluation
+---
+
+## 📈 Model Evaluation
 
 The models were evaluated using:
 
-Accuracy
-Precision
-Recall
-F1-score
-ROC-AUC
-PR-AUC
-Confusion Matrix
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- ROC-AUC
+- PR-AUC
+- Confusion Matrix
 
 For predictive maintenance, failure detection is particularly important, so recall and precision for the failure class were considered along with overall performance.
 
-Final XGBoost Model
+### Final XGBoost Model
 
 The balanced XGBoost model achieved approximately:
 
-Accuracy: 97.5%
-Failure Precision: 58.5%
-Failure Recall: 91.2%
-Failure F1-score: 71.3%
-ROC-AUC: 0.978
-PR-AUC: 0.888
-🔍 Model Explainability
+- Accuracy: **97.5%**
+- Failure Precision: **58.5%**
+- Failure Recall: **91.2%**
+- Failure F1-score: **71.3%**
+- ROC-AUC: **0.978**
+- PR-AUC: **0.888**
+
+---
+
+## 🔍 Model Explainability
 
 XGBoost feature importance was used to understand which input features contributed most to the model's predictions.
 
@@ -150,36 +157,46 @@ The feature importance analysis helps identify the relative importance of machin
 
 Feature importance represents the model's internal usage of features and should not be interpreted as proof of causation.
 
-🚦 Risk Assessment
+---
+
+## 🚦 Risk Assessment
 
 The predicted failure probability is converted into three project-defined risk levels:
 
-Failure Probability	Risk Level
-< 30%	Low Risk
-30% – 69.99%	Medium Risk
-≥ 70%	High Risk
+| Failure Probability | Risk Level |
+|---|---|
+| < 30% | Low Risk |
+| 30% – 69.99% | Medium Risk |
+| ≥ 70% | High Risk |
 
 These thresholds are project-defined for the application and are not presented as universal industrial standards.
 
-🌐 Streamlit Application
+---
+
+## 🌐 Streamlit Application
 
 The project includes an interactive Streamlit application.
 
 Users can enter:
 
-Machine Type
-Air Temperature
-Process Temperature
-Rotational Speed
-Torque
-Tool Wear
+- Machine Type
+- Air Temperature
+- Process Temperature
+- Rotational Speed
+- Torque
+- Tool Wear
 
 The application provides:
 
-Failure probability
-Risk level
-Model feature importance
-📁 Project Structure
+- Failure probability
+- Risk level
+- Model feature importance
+
+---
+
+## 📁 Project Structure
+
+```text
 predictive-maintenance/
 │
 ├── app/
@@ -201,7 +218,10 @@ predictive-maintenance/
 ├── .gitignore
 ├── requirements.txt
 └── README.md
-▶️ How to Run the Project
+
+---
+
+## ▶️ How to Run the Project
 1. Clone the repository
 git clone https://github.com/Vineetha6767/predictive-maintenance-equipment-failure.git
 2. Navigate to the project directory
@@ -215,18 +235,26 @@ streamlit run app/app.py
 
 The application will open in your browser.
 
-📌 Future Enhancements
+--- 
+
+## 📌 Future Enhancements
 Deploy the application as a cloud-based web application
 Add real-time machine sensor data
 Add maintenance recommendations
 Add historical failure monitoring
 Improve risk threshold calibration using validation data
 Add additional model monitoring capabilities
-👩‍💻 Author
+
+---
+
+## 👩‍💻 Author
 
 Vineetha
 
 B.Tech – Computer Science (Data Science)
-📄 License
+
+---
+
+## 📄 License
 
 This project is developed for educational and portfolio purposes.
